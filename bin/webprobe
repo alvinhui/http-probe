@@ -1,0 +1,44 @@
+#!/usr/bin/env node
+
+var program = require('commander'),
+    async = require('async'),
+    probe = require('./../index'),
+    path = require('path'),
+    conf = require('../package.json');
+
+program
+    .version(conf.version, '-v, --version')
+    .parse(process.argv);
+
+var file = program.args[0];
+var config = {};
+
+if (file) {
+    file = path.resolve(file);
+    config = require(file);
+}
+
+if(config.length){
+    var reports = [];
+    async.each(config, function(item, next){
+        probe.run(item, function(err, report){
+            if(err) throw err;
+
+            reports.push(report);
+            next();
+        });
+    }, function(err){
+        if(err) throw err;
+
+        reports.forEach(function(report){
+            probe.report(report);
+        });
+    });
+}
+else{
+    probe.run(config, function(err, report){
+        if(err) throw err;
+
+        probe.report(report);
+    });
+}

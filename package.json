@@ -1,0 +1,42 @@
+{
+  "name": "@ali/webprobe",
+  "author": "Alvin Hui <alvinhui@outlook.com.com>",
+  "version": "0.3.1",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:alvinhui/webprobe.git"
+  },
+  "description": "模板内资源探测器，根据规则匹配模板内的 web 资源，然后探测资源是否可访问、其内容是否存在某些关键字",
+  "main": "./index.js",
+  "bin": {
+    "webprobe": "./bin/webprobe"
+  },
+  "scripts": {
+    "test": "mocha --require should --reporter spec --check-leaks test/"
+  },
+  "keywords": [
+    "http probe",
+    "https probe",
+    "probe",
+    "web probe"
+  ],
+  "dependencies": {
+    "async": "^0.9.0",
+    "commander": "^2.6.0",
+    "debug": "~2.1.1",
+    "iconv-lite": "^0.4.7",
+    "jschardet": "^1.1.0",
+    "request": "^2.53.0",
+    "underscore": "^1.8.2",
+    "validator": "^3.34.0",
+    "walk": "^2.3.9"
+  },
+  "devDependencies": {
+    "mocha": "^2.1.0",
+    "should": "^5.0.0",
+    "underscore": "^1.8.2"
+  },
+  "directories": {
+    "test": "test"
+  }
+}

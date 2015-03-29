@@ -1,0 +1,4 @@
+var str = '<img src="test.png">';
+<script src="https://g.alicdn.com/tb/trademanager/2.0.0/pages/bought/page/index-min.js"></script>
+<script src="http://a.tbcdn.cn/tbra/1.0/tbra-aio.js"></script>
+<script src="http://a.tbcdn.cn/tbra/1.0/tbra-aio.js?123"></script>
