@@ -1,6 +1,12 @@
 # 文件内容的 web 资源探测器：webprobe
 ---
 
+[![webprobe](https://nodei.co/npm/webprobe.png)](https://npmjs.org/package/webprobe)
+[![NPM downloads](http://img.shields.io/npm/dm/webprobe.svg)](https://npmjs.org/package/webprobe)
+[![Coverage Status](https://img.shields.io/coveralls/alvinhui/webprobe.svg)](https://coveralls.io/r/alvinhui/webprobe?branch=master)
+[![node version](https://img.shields.io/badge/node.js-%3E=_0.12-green.svg?style=flat-square)](http://nodejs.org/download/)
+
+
 文件内容的 web 资源探测器，根据规则匹配文件内的 web 资源，然后探测资源是否可访问、其内容是否存在某些关键字。
 
 可用在 https 改造中，例如：匹配模板内通过 `<script src="">` 和 `<link href="">` 方式加载的资源，并检测该资源的源码内是否存在 `http://` 关键字（如果存在则该资源有可能会发起 http 请求，所以该资源需要改造）

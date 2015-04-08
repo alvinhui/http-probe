@@ -1,7 +1,7 @@
 {
   "name": "webprobe",
   "author": "Alvin Hui <alvinhui@outlook.com.com>",
-  "version": "0.3.1",
+  "version": "0.4.0",
   "repository": {
     "type": "git",
     "url": "git@github.com:alvinhui/webprobe.git"
@@ -12,7 +12,9 @@
     "webprobe": "./bin/webprobe"
   },
   "scripts": {
-    "test": "mocha --require should --reporter spec --check-leaks test/"
+    "test": "mocha --require should --reporter spec --check-leaks test/",
+    "test-ci": "istanbul cover node_modules/mocha/bin/_mocha --report lcovonly -- --require should --reporter spec --check-leaks test/"
+
   },
   "keywords": [
     "http probe",
@@ -34,7 +36,8 @@
   "devDependencies": {
     "mocha": "^2.1.0",
     "should": "^5.0.0",
-    "underscore": "^1.8.2"
+    "underscore": "^1.8.2",
+    "istanbul": "0.3.8"
   },
   "directories": {
     "test": "test"
